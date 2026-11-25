@@ -1,0 +1,21 @@
+{
+  "mcpServers": {
+    "loja-ana-atendimento": {
+      "command": "node",
+      "args": ["/caminho/para/mcp-leitura/src/index.js"],
+      "env": {
+        "MCP_PESSOA": "ana_atendimento",
+        "MCP_ESCOPOS": "/caminho/para/mcp-leitura/exemplos/escopos.json",
+        "MCP_DADOS": "/caminho/para/mcp-leitura/exemplos/dados.json",
+        "MCP_AUDITORIA": "/caminho/para/mcp-leitura/auditoria.jsonl"
+      }
+    },
+    "loja-bruno-analise": {
+      "command": "node",
+      "args": ["/caminho/para/mcp-leitura/src/index.js"],
+      "env": {
+        "MCP_PESSOA": "bruno_analise"
+      }
+    }
+  }
+}

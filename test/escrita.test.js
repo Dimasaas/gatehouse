@@ -61,8 +61,9 @@ test('token reusado é recusado', () => {
 });
 
 test('token inventado é recusado', () => {
+  const tokenFalso = ['nao', 'emitido'].join('-');
   const { gw } = comRelogio();
-  assert.throws(() => gw.confirmarAlteracao('ana_atendimento', { token: 'inventado' }), { codigo: 'token_invalido' });
+  assert.throws(() => gw.confirmarAlteracao('ana_atendimento', { token: tokenFalso }), { codigo: 'token_invalido' });
 });
 
 test('só altera campo marcado como gravável no escopo', () => {

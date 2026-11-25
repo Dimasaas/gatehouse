@@ -1,0 +1,13 @@
+{
+  "nome": "gatehouse",
+  "paleta": {
+    "fundo": "#16181D",
+    "primaria": "#F5A524",
+    "secundaria": "#8A94A6",
+    "texto": "#E8ECF1",
+    "acento": "#22C55E"
+  },
+  "fonte": "'Segoe UI', system-ui, sans-serif / 'JetBrains Mono', Consolas, monospace",
+  "logo": "docs/logo.svg",
+  "conceito": "Portaria de dados: arco de portão com fechadura, listras de advertência âmbar e um log de auditoria que registra cada passagem."
+}

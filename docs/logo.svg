@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="t">
+  <title id="t">Gatehouse: arco de portão com fechadura</title>
+  <rect x="8" y="8" width="240" height="240" rx="28" fill="#16181D" stroke="#8A94A6" stroke-width="6"/>
+  <clipPath id="base"><rect x="8" y="8" width="240" height="240" rx="28"/></clipPath>
+  <g clip-path="url(#base)">
+    <rect x="8" y="196" width="240" height="52" fill="#F5A524"/>
+    <path d="M-20 252L40 192M20 252L80 192M60 252L120 192M100 252L160 192M140 252L200 192M180 252L240 192M220 252L280 192M260 252L320 192" stroke="#16181D" stroke-width="14"/>
+  </g>
+  <rect x="8" y="190" width="240" height="6" fill="#16181D"/>
+  <rect x="8" y="8" width="240" height="240" rx="28" fill="none" stroke="#8A94A6" stroke-width="6"/>
+  <path d="M52 196V122A76 76 0 0 1 204 122V196" fill="none" stroke="#F5A524" stroke-width="18" stroke-linecap="butt"/>
+  <path d="M52 196V122A76 76 0 0 1 204 122V196" fill="none" stroke="#16181D" stroke-width="4" stroke-opacity=".5"/>
+  <circle cx="128" cy="116" r="20" fill="#E8ECF1"/>
+  <path d="M117 124H139L146 168H110Z" fill="#E8ECF1"/>
+  <circle cx="128" cy="116" r="7" fill="#16181D"/>
+  <path d="M124 118H132L134 150H122Z" fill="#16181D"/>
+</svg>

@@ -1,86 +1,142 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 320" width="1280" height="320" role="img" aria-labelledby="t d">
   <title id="t">Gatehouse</title>
-  <desc id="d">Gateway MCP: o agente fala com o gateway, que aplica o escopo antes de tocar no banco.</desc>
+  <desc id="d">Portaria de dados: o agente passa pela cancela do gateway, que confere o escopo do crachá, e cada chamada vira uma linha no log de auditoria.</desc>
   <defs>
-    <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#0a0418"/>
-      <stop offset="0.6" stop-color="#120726"/>
-      <stop offset="1" stop-color="#2b0f52"/>
-    </linearGradient>
-    <linearGradient id="brilho" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#FF4FA3"/>
-      <stop offset="0.5" stop-color="#7C5CFF"/>
-      <stop offset="1" stop-color="#4D8BFF"/>
-    </linearGradient>
-    <linearGradient id="sol" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#FFB86B"/>
-      <stop offset="1" stop-color="#FF4FA3"/>
-    </linearGradient>
-    <clipPath id="metade"><rect x="0" y="0" width="1280" height="296"/></clipPath>
+    <clipPath id="faixaCima"><rect x="0" y="0" width="1280" height="14"/></clipPath>
+    <clipPath id="faixaBaixo"><rect x="0" y="306" width="1280" height="14"/></clipPath>
+    <clipPath id="painel"><rect x="846" y="64" width="394" height="208"/></clipPath>
     <style>
-      text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
-      .fluxo { stroke-dasharray: 6 8; animation: corre 1.6s linear infinite; }
-      .pulso { animation: pulsa 3.2s ease-in-out infinite; }
+      .s { font-family: 'Segoe UI', system-ui, sans-serif; }
+      .m { font-family: 'JetBrains Mono', Consolas, monospace; }
+      .listras { animation: corre 3s linear infinite; }
+      .cancela { transform-origin: 703px 196px; animation: cancela 6s ease-in-out infinite; }
+      .fluxo { stroke-dasharray: 6 8; animation: fluxo 1.4s linear infinite; }
+      .varre { animation: varre 6s steps(6) infinite; }
       .cursor { animation: pisca 1.1s steps(1) infinite; }
-      @keyframes corre { to { stroke-dashoffset: -28; } }
-      @keyframes pulsa { 0%, 100% { opacity: .6; } 50% { opacity: 1; } }
+      @keyframes corre { to { transform: translateX(-40px); } }
+      @keyframes cancela { 0%, 30% { transform: rotate(0deg); } 45%, 85% { transform: rotate(-62deg); } 100% { transform: rotate(0deg); } }
+      @keyframes fluxo { to { stroke-dashoffset: -28; } }
+      @keyframes varre { from { transform: translateY(0); } to { transform: translateY(168px); } }
       @keyframes pisca { 50% { opacity: 0; } }
-      @media (prefers-reduced-motion: reduce) { .fluxo, .pulso, .cursor { animation: none; } }
+      @media (prefers-reduced-motion: reduce) { .listras, .cancela, .fluxo, .varre, .cursor { animation: none; } .cancela { transform: rotate(-30deg); } .varre { display: none; } }
     </style>
   </defs>
-
-  <rect width="1280" height="320" fill="url(#fundo)"/>
-
-  <!-- chão em perspectiva -->
-  <g clip-path="url(#metade)" stroke-width="1" fill="none">
-    <g stroke="#7C5CFF" stroke-opacity="0.35">
-      <line x1="640" y1="200" x2="-400" y2="320"/><line x1="640" y1="200" x2="-120" y2="320"/>
-      <line x1="640" y1="200" x2="160" y2="320"/><line x1="640" y1="200" x2="400" y2="320"/>
-      <line x1="640" y1="200" x2="640" y2="320"/><line x1="640" y1="200" x2="880" y2="320"/>
-      <line x1="640" y1="200" x2="1120" y2="320"/><line x1="640" y1="200" x2="1400" y2="320"/>
-      <line x1="640" y1="200" x2="1680" y2="320"/>
-    </g>
-    <g stroke="#4D8BFF" stroke-opacity="0.35">
-      <line x1="0" y1="214" x2="1280" y2="214"/><line x1="0" y1="232" x2="1280" y2="232"/>
-      <line x1="0" y1="256" x2="1280" y2="256"/><line x1="0" y1="288" x2="1280" y2="288"/>
-    </g>
-  </g>
-  <line x1="0" y1="200" x2="1280" y2="200" stroke="#FF4FA3" stroke-opacity="0.5"/>
-
-  <!-- sol pequeno, só detalhe -->
-  <g opacity="0.9">
-    <circle cx="1196" cy="48" r="22" fill="url(#sol)"/>
-    <rect x="1170" y="49" width="52" height="2" fill="#120726"/>
-    <rect x="1170" y="56" width="52" height="3" fill="#120726"/>
-    <rect x="1170" y="64" width="52" height="4" fill="#120726"/>
+  <rect width="1280" height="320" fill="#16181D"/>
+  <g stroke="#8A94A6" stroke-opacity=".10" stroke-width="1">
+    <path d="M0 80H1280M0 160H1280M0 240H1280M160 0V320M320 0V320M480 0V320M640 0V320M800 0V320M960 0V320M1120 0V320"/>
   </g>
 
-  <rect x="0" y="316" width="1280" height="4" fill="url(#brilho)"/>
-
-  <text x="64" y="132" font-size="64" font-weight="700" fill="#FF4FA3">gatehouse<tspan class="cursor" fill="#FFB86B">_</tspan></text>
-  <text x="66" y="180" font-size="20" fill="#F5EEFF">gateway MCP de leitura com escopo por pessoa</text>
-  <text x="66" y="218" font-size="16" fill="#C3A8E6">escrita em 2 etapas  ·  tudo auditado</text>
-  <text x="66" y="262" font-size="14" fill="#C3A8E6">node · @modelcontextprotocol/sdk · zod · node:test</text>
-
-  <!-- agente -> gateway -> banco -->
-  <g transform="translate(640 -30)">
-    <line class="fluxo" x1="118" y1="160" x2="236" y2="160" stroke="#FF4FA3" stroke-width="3"/>
-    <line class="fluxo" x1="372" y1="160" x2="470" y2="160" stroke="#4D8BFF" stroke-width="3"/>
-
-    <rect x="0" y="118" width="118" height="84" rx="12" fill="#1e0d3d" stroke="#7C5CFF" stroke-width="2"/>
-    <text x="59" y="156" font-size="17" fill="#F5EEFF" text-anchor="middle">agente</text>
-    <text x="59" y="180" font-size="12" fill="#C3A8E6" text-anchor="middle">cliente MCP</text>
-
-    <g class="pulso">
-      <rect x="236" y="92" width="136" height="136" rx="16" fill="#1e0d3d" stroke="url(#brilho)" stroke-width="3"/>
+  <!-- listras de advertência -->
+  <g clip-path="url(#faixaCima)">
+    <rect width="1280" height="14" fill="#F5A524"/>
+    <g class="listras" stroke="#16181D" stroke-width="10">
+      <path d="M-20 18L0 -4"/><path d="M20 18L40 -4"/><path d="M60 18L80 -4"/><path d="M100 18L120 -4"/><path d="M140 18L160 -4"/><path d="M180 18L200 -4"/><path d="M220 18L240 -4"/><path d="M260 18L280 -4"/><path d="M300 18L320 -4"/><path d="M340 18L360 -4"/><path d="M380 18L400 -4"/><path d="M420 18L440 -4"/><path d="M460 18L480 -4"/><path d="M500 18L520 -4"/><path d="M540 18L560 -4"/><path d="M580 18L600 -4"/><path d="M620 18L640 -4"/><path d="M660 18L680 -4"/><path d="M700 18L720 -4"/><path d="M740 18L760 -4"/><path d="M780 18L800 -4"/><path d="M820 18L840 -4"/><path d="M860 18L880 -4"/><path d="M900 18L920 -4"/><path d="M940 18L960 -4"/><path d="M980 18L1000 -4"/><path d="M1020 18L1040 -4"/><path d="M1060 18L1080 -4"/><path d="M1100 18L1120 -4"/><path d="M1140 18L1160 -4"/><path d="M1180 18L1200 -4"/><path d="M1220 18L1240 -4"/><path d="M1260 18L1280 -4"/><path d="M1300 18L1320 -4"/><path d="M1340 18L1360 -4"/>
     </g>
-    <text x="304" y="148" font-size="18" font-weight="700" fill="#FF4FA3" text-anchor="middle">gatehouse</text>
-    <text x="304" y="172" font-size="12" fill="#7C5CFF" text-anchor="middle">escopo</text>
-    <text x="304" y="190" font-size="12" fill="#4D8BFF" text-anchor="middle">prévia + OK</text>
-    <text x="304" y="208" font-size="12" fill="#C3A8E6" text-anchor="middle">auditoria</text>
+  </g>
+  <g clip-path="url(#faixaBaixo)">
+    <rect y="306" width="1280" height="14" fill="#F5A524"/>
+    <g class="listras" stroke="#16181D" stroke-width="10">
+      <path d="M-20 324L0 302"/><path d="M20 324L40 302"/><path d="M60 324L80 302"/><path d="M100 324L120 302"/><path d="M140 324L160 302"/><path d="M180 324L200 302"/><path d="M220 324L240 302"/><path d="M260 324L280 302"/><path d="M300 324L320 302"/><path d="M340 324L360 302"/><path d="M380 324L400 302"/><path d="M420 324L440 302"/><path d="M460 324L480 302"/><path d="M500 324L520 302"/><path d="M540 324L560 302"/><path d="M580 324L600 302"/><path d="M620 324L640 302"/><path d="M660 324L680 302"/><path d="M700 324L720 302"/><path d="M740 324L760 302"/><path d="M780 324L800 302"/><path d="M820 324L840 302"/><path d="M860 324L880 302"/><path d="M900 324L920 302"/><path d="M940 324L960 302"/><path d="M980 324L1000 302"/><path d="M1020 324L1040 302"/><path d="M1060 324L1080 302"/><path d="M1100 324L1120 302"/><path d="M1140 324L1160 302"/><path d="M1180 324L1200 302"/><path d="M1220 324L1240 302"/><path d="M1260 324L1280 302"/><path d="M1300 324L1320 302"/><path d="M1340 324L1360 302"/>
+    </g>
+  </g>
 
-    <rect x="470" y="118" width="118" height="84" rx="12" fill="#1e0d3d" stroke="#4D8BFF" stroke-width="2"/>
-    <text x="529" y="156" font-size="17" fill="#F5EEFF" text-anchor="middle">banco</text>
-    <text x="529" y="180" font-size="12" fill="#C3A8E6" text-anchor="middle">fictício</text>
+  <!-- logo e título -->
+  <g transform="translate(56 40) scale(.42)">
+  <rect x="8" y="8" width="240" height="240" rx="28" fill="#16181D" stroke="#8A94A6" stroke-width="6"/>
+  <clipPath id="base"><rect x="8" y="8" width="240" height="240" rx="28"/></clipPath>
+  <g clip-path="url(#base)">
+    <rect x="8" y="196" width="240" height="52" fill="#F5A524"/>
+    <path d="M-20 252L40 192M20 252L80 192M60 252L120 192M100 252L160 192M140 252L200 192M180 252L240 192M220 252L280 192M260 252L320 192" stroke="#16181D" stroke-width="14"/>
+  </g>
+  <rect x="8" y="190" width="240" height="6" fill="#16181D"/>
+  <rect x="8" y="8" width="240" height="240" rx="28" fill="none" stroke="#8A94A6" stroke-width="6"/>
+  <path d="M52 196V122A76 76 0 0 1 204 122V196" fill="none" stroke="#F5A524" stroke-width="18" stroke-linecap="butt"/>
+  <path d="M52 196V122A76 76 0 0 1 204 122V196" fill="none" stroke="#16181D" stroke-width="4" stroke-opacity=".5"/>
+  <circle cx="128" cy="116" r="20" fill="#E8ECF1"/>
+  <path d="M117 124H139L146 168H110Z" fill="#E8ECF1"/>
+  <circle cx="128" cy="116" r="7" fill="#16181D"/>
+  <path d="M124 118H132L134 150H122Z" fill="#16181D"/>
+  </g>
+  <text class="s" x="54" y="204" font-size="82" font-weight="800" letter-spacing="-2" fill="#E8ECF1">gatehouse</text>
+  <rect x="58" y="220" width="64" height="5" fill="#F5A524"/>
+  <text class="s" x="58" y="258" font-size="21" font-weight="600" fill="#E8ECF1">gateway MCP de leitura com escopo por pessoa</text>
+  <text class="m" x="58" y="284" font-size="14" fill="#8A94A6">propor → confirmar com token · tudo em auditoria.jsonl<tspan class="cursor" fill="#F5A524">_</tspan></text>
+
+  <!-- agente -> portão -> log -->
+  <g>
+    <rect x="590" y="132" width="72" height="64" rx="8" fill="#1F232B" stroke="#8A94A6" stroke-width="2"/>
+    <text class="s" x="626" y="161" font-size="15" font-weight="700" text-anchor="middle" fill="#E8ECF1">agente</text>
+    <text class="m" x="626" y="181" font-size="11" text-anchor="middle" fill="#8A94A6">cliente MCP</text>
+    <line class="fluxo" x1="662" y1="164" x2="700" y2="164" stroke="#F5A524" stroke-width="3"/>
+  </g>
+
+  <!-- portão: postes, arco com crachá e cancela -->
+  <g>
+    <rect x="696" y="110" width="14" height="96" fill="#8A94A6"/>
+    <rect x="778" y="110" width="14" height="96" fill="#8A94A6"/>
+    <path d="M703 110A41 41 0 0 1 785 110" fill="none" stroke="#F5A524" stroke-width="12"/>
+    <rect x="690" y="204" width="26" height="10" fill="#F5A524"/>
+    <rect x="772" y="204" width="26" height="10" fill="#F5A524"/>
+    <g class="cancela">
+      <rect x="703" y="190" width="86" height="12" fill="#F5A524"/>
+      <path d="M718 190L730 202M738 190L750 202M758 190L770 202M778 190L789 201" stroke="#16181D" stroke-width="6"/>
+    </g>
+    <!-- crachá pendurado -->
+    <path d="M744 80V104" stroke="#8A94A6" stroke-width="2"/>
+    <rect x="726" y="104" width="36" height="46" rx="4" fill="#E8ECF1"/>
+    <rect x="740" y="108" width="8" height="3" rx="1.5" fill="#16181D"/>
+    <circle cx="744" cy="124" r="7" fill="#16181D"/>
+    <rect x="732" y="136" width="24" height="3" fill="#16181D"/>
+    <rect x="735" y="142" width="18" height="3" fill="#8A94A6"/>
+  </g>
+  <line class="fluxo" x1="792" y1="164" x2="842" y2="164" stroke="#F5A524" stroke-width="3"/>
+
+  <!-- painel de auditoria -->
+  <rect x="846" y="64" width="394" height="208" rx="8" fill="#1F232B" stroke="#8A94A6" stroke-width="2"/>
+  <rect x="846" y="64" width="394" height="26" rx="8" fill="#16181D" stroke="#8A94A6" stroke-width="2"/>
+  <text class="m" x="860" y="82" font-size="12" fill="#8A94A6">auditoria.jsonl</text>
+  <g class="m" font-size="13">
+    <g transform="translate(0 112)">
+      <circle cx="866" cy="-4" r="5" fill="#22C55E"/>
+      <text x="884" y="0" fill="#E8ECF1">ana</text>
+      <text x="934" y="0" fill="#8A94A6">consultar</text>
+      <text x="1076" y="0" fill="#E8ECF1">ok</text>
+    </g>
+    <g transform="translate(0 140)">
+      <circle cx="866" cy="-4" r="5" fill="#EF4444"/>
+      <text x="884" y="0" fill="#E8ECF1">ana</text>
+      <text x="934" y="0" fill="#8A94A6">consultar</text>
+      <text x="1076" y="0" fill="#E8ECF1">campo_desconhecido</text>
+    </g>
+    <g transform="translate(0 168)">
+      <circle cx="866" cy="-4" r="5" fill="#22C55E"/>
+      <text x="884" y="0" fill="#E8ECF1">ana</text>
+      <text x="934" y="0" fill="#8A94A6">propor_alteracao</text>
+      <text x="1076" y="0" fill="#E8ECF1">ok</text>
+    </g>
+    <g transform="translate(0 196)">
+      <circle cx="866" cy="-4" r="5" fill="#EF4444"/>
+      <text x="884" y="0" fill="#E8ECF1">ana</text>
+      <text x="934" y="0" fill="#8A94A6">confirmar</text>
+      <text x="1076" y="0" fill="#E8ECF1">token_ja_usado</text>
+    </g>
+    <g transform="translate(0 224)">
+      <circle cx="866" cy="-4" r="5" fill="#22C55E"/>
+      <text x="884" y="0" fill="#E8ECF1">ana</text>
+      <text x="934" y="0" fill="#8A94A6">confirmar</text>
+      <text x="1076" y="0" fill="#E8ECF1">ok</text>
+    </g>
+    <g transform="translate(0 252)">
+      <circle cx="866" cy="-4" r="5" fill="#22C55E"/>
+      <text x="884" y="0" fill="#E8ECF1">ana</text>
+      <text x="934" y="0" fill="#8A94A6">listar_tabelas</text>
+      <text x="1076" y="0" fill="#E8ECF1">ok</text>
+    </g>
+  </g>
+  <g clip-path="url(#painel)">
+    <g class="varre">
+      <rect x="846" y="93" width="394" height="28" fill="#F5A524" fill-opacity=".14"/>
+      <rect x="846" y="93" width="4" height="28" fill="#F5A524"/>
+    </g>
   </g>
 </svg>

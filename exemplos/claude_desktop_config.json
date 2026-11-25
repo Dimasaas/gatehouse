@@ -1,18 +1,18 @@
 {
   "mcpServers": {
-    "loja-ana-atendimento": {
+    "guarita-ana-atendimento": {
       "command": "node",
-      "args": ["/caminho/para/mcp-leitura/src/index.js"],
+      "args": ["/caminho/para/guarita/src/index.js"],
       "env": {
         "MCP_PESSOA": "ana_atendimento",
-        "MCP_ESCOPOS": "/caminho/para/mcp-leitura/exemplos/escopos.json",
-        "MCP_DADOS": "/caminho/para/mcp-leitura/exemplos/dados.json",
-        "MCP_AUDITORIA": "/caminho/para/mcp-leitura/auditoria.jsonl"
+        "MCP_ESCOPOS": "/caminho/para/guarita/exemplos/escopos.json",
+        "MCP_DADOS": "/caminho/para/guarita/exemplos/dados.json",
+        "MCP_AUDITORIA": "/caminho/para/guarita/auditoria.jsonl"
       }
     },
-    "loja-bruno-analise": {
+    "guarita-bruno-analise": {
       "command": "node",
-      "args": ["/caminho/para/mcp-leitura/src/index.js"],
+      "args": ["/caminho/para/guarita/src/index.js"],
       "env": {
         "MCP_PESSOA": "bruno_analise"
       }

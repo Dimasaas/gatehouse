@@ -8,7 +8,7 @@ import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StdioClientTransport } from '@modelcontextprotocol/sdk/client/stdio.js';
 
 const entrada = fileURLToPath(new URL('../src/index.js', import.meta.url));
-const dir = mkdtempSync(join(tmpdir(), 'mcp-leitura-demo-'));
+const dir = mkdtempSync(join(tmpdir(), 'guarita-demo-'));
 const arquivoAuditoria = join(dir, 'auditoria.jsonl');
 
 async function conectar(pessoa) {

@@ -24,4 +24,4 @@ const gateway = new Gateway({ banco, config, auditoria });
 gateway.escopoDe(pessoa); // falha cedo se a pessoa não existe
 
 await criarServidor({ gateway, pessoa }).connect(new StdioServerTransport());
-console.error(`mcp-leitura pronto para ${pessoa}`); // stderr: stdout é do protocolo
+console.error(`guarita pronto para ${pessoa}`); // stderr: stdout é do protocolo

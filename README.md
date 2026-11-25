@@ -1,16 +1,18 @@
 <p align="center">
-  <img src="docs/banner.svg" alt="mcp-leitura: gateway MCP com permissão por pessoa" width="100%">
+  <img src="docs/banner.svg" alt="Guarita: gateway MCP de leitura com escopo por pessoa" width="100%">
 </p>
 
 <p align="center">
-  <a href="https://github.com/Dimasaas/mcp-leitura/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/Dimasaas/mcp-leitura/actions/workflows/ci.yml/badge.svg"></a>
+  <a href="https://github.com/Dimasaas/guarita/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/Dimasaas/guarita/actions/workflows/ci.yml/badge.svg"></a>
   <img alt="Node 20+" src="https://img.shields.io/badge/node-20%2B-00E5FF?labelColor=2a1052">
   <img alt="MCP" src="https://img.shields.io/badge/protocolo-MCP-B388FF?labelColor=2a1052">
   <img alt="Testes" src="https://img.shields.io/badge/testes-node%3Atest-1b3a8a">
   <img alt="Licença PolyForm Noncommercial" src="https://img.shields.io/badge/licença-PolyForm%20Noncommercial-7C4DFF">
 </p>
 
-# mcp-leitura
+# Guarita
+
+> gateway MCP de leitura com escopo por pessoa, escrita em 2 etapas e auditoria
 
 Um gateway [MCP](https://modelcontextprotocol.io) (servidor stdio) que dá a um agente de IA acesso **de leitura** a um banco, **com permissão por pessoa**. Quem decide o que o agente enxerga é um arquivo de escopos, não o agente. Escrever é possível, mas só em duas etapas: o agente **propõe**, a pessoa **vê a prévia e dá o OK**.
 
@@ -20,7 +22,7 @@ O banco do projeto é fictício e fica em memória (uma loja de exemplo: cliente
 
 Quase todo mundo quer o mesmo: *"deixa a IA olhar a produção para responder perguntas"*. O caminho mais curto é entregar uma conexão de banco ao agente, e isso é entregar a chave da casa: SQL livre lê qualquer tabela, qualquer coluna, sem limite, e um erro de interpretação do modelo vira um `UPDATE` sem `WHERE`.
 
-O `mcp-leitura` fica no meio e muda o contrato:
+A Guarita fica no meio e muda o contrato:
 
 - o agente **não escreve SQL**: usa uma DSL pequena (`tabela`, `campos`, `filtros`, `limite`);
 - cada pessoa tem um **escopo**: quais tabelas e quais campos. O que está fora **nem aparece no esquema**;
@@ -32,7 +34,7 @@ O `mcp-leitura` fica no meio e muda o contrato:
 
 ```mermaid
 flowchart LR
-    A["Agente de IA<br/>(cliente MCP)"] -->|"listar_tabelas<br/>consultar<br/>propor / confirmar"| G["Gateway<br/>mcp-leitura"]
+    A["Agente de IA<br/>(cliente MCP)"] -->|"listar_tabelas<br/>consultar<br/>propor / confirmar"| G["Gateway<br/>Guarita"]
     G --> E{"Escopo da pessoa<br/>tabelas + campos"}
     E -->|"dentro do escopo"| B[("Banco")]
     E -->|"fora do escopo"| N["recusa:<br/>'desconhecido'"]
@@ -71,8 +73,8 @@ sequenceDiagram
 ## Uso
 
 ```bash
-git clone https://github.com/Dimasaas/mcp-leitura.git
-cd mcp-leitura
+git clone https://github.com/Dimasaas/guarita.git
+cd guarita
 npm ci
 npm test        # suíte com node:test
 npm run demo    # imprime uma sessão completa
@@ -171,4 +173,4 @@ test/            node:test (escopo, campo oculto, limite, tokens, auditoria, ser
 
 ## 🇺🇸 TL;DR
 
-`mcp-leitura` is a small MCP (stdio) gateway that gives an AI agent **read access** to a database **per person**, without handing over the keys. Scopes in a config file define which tables and fields each person sees (anything else is not even in the schema). Queries use a tiny DSL (`=`, `!=`, `>`, `<`, `contem`, capped `limite`), never raw SQL. Writes are **two-step**: `propor_alteracao` returns a before/after preview and a short-lived token; `confirmar_alteracao(token)` only runs if the token is valid, unexpired, unused and from the same person. Every call is logged to JSONL without sensitive values. The database is fictional and in-memory. Node 20+, `@modelcontextprotocol/sdk`, `zod`, `node:test`. Licensed PolyForm Noncommercial 1.0.0.
+`Guarita` is a small MCP (stdio) gateway that gives an AI agent **read access** to a database **per person**, without handing over the keys. Scopes in a config file define which tables and fields each person sees (anything else is not even in the schema). Queries use a tiny DSL (`=`, `!=`, `>`, `<`, `contem`, capped `limite`), never raw SQL. Writes are **two-step**: `propor_alteracao` returns a before/after preview and a short-lived token; `confirmar_alteracao(token)` only runs if the token is valid, unexpired, unused and from the same person. Every call is logged to JSONL without sensitive values. The database is fictional and in-memory. Node 20+, `@modelcontextprotocol/sdk`, `zod`, `node:test`. Licensed PolyForm Noncommercial 1.0.0.

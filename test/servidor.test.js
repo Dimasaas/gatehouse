@@ -23,7 +23,7 @@ async function conectar(pessoa, auditoria) {
 const json = (r) => JSON.parse(r.content[0].text);
 
 test('servidor stdio: ferramentas, escopo e escrita em duas etapas de ponta a ponta', async () => {
-  const dir = mkdtempSync(join(tmpdir(), 'mcp-leitura-'));
+  const dir = mkdtempSync(join(tmpdir(), 'guarita-'));
   const caminho = join(dir, 'auditoria.jsonl');
   const cliente = await conectar('ana_atendimento', caminho);
   try {
@@ -71,5 +71,5 @@ test('servidor stdio: ferramentas, escopo e escrita em duas etapas de ponta a po
 });
 
 test('servidor stdio: pessoa desconhecida não sobe', async () => {
-  await assert.rejects(conectar('intruso', join(tmpdir(), 'mcp-leitura-nunca.jsonl')));
+  await assert.rejects(conectar('intruso', join(tmpdir(), 'guarita-nunca.jsonl')));
 });

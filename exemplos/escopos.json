@@ -1,0 +1,29 @@
+{
+  "limite_padrao": 10,
+  "limite_maximo": 20,
+  "validade_token_segundos": 120,
+  "pessoas": {
+    "ana_atendimento": {
+      "tabelas": {
+        "clientes": { "campos": ["id", "nome", "email", "cidade"] },
+        "pedidos": {
+          "campos": ["id", "cliente_id", "produto_id", "quantidade", "total", "status", "criado_em"],
+          "gravaveis": ["status"]
+        },
+        "produtos": { "campos": ["id", "nome", "preco", "estoque"] }
+      }
+    },
+    "bruno_analise": {
+      "tabelas": {
+        "clientes": { "campos": ["id", "cidade", "nivel"] },
+        "pedidos": { "campos": ["id", "cliente_id", "produto_id", "quantidade", "total", "status", "criado_em"] },
+        "produtos": { "campos": ["id", "nome", "preco", "estoque", "custo"] }
+      }
+    },
+    "carla_estagio": {
+      "tabelas": {
+        "produtos": { "campos": ["id", "nome", "preco"] }
+      }
+    }
+  }
+}

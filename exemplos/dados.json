@@ -1,0 +1,330 @@
+{
+  "clientes": [
+    {
+      "id": 1,
+      "nome": "Marina Albuquerque",
+      "email": "marina1@example.com",
+      "cidade": "Goiânia",
+      "nivel": "ouro",
+      "observacao_interna": "pagador pontual"
+    },
+    {
+      "id": 2,
+      "nome": "Rafael Teixeira Lopes",
+      "email": "rafael2@example.com",
+      "cidade": "Anápolis",
+      "nivel": "prata",
+      "observacao_interna": "pediu desconto duas vezes"
+    },
+    {
+      "id": 3,
+      "nome": "Beatriz Nogueira",
+      "email": "beatriz3@example.com",
+      "cidade": "Goiânia",
+      "nivel": "bronze",
+      "observacao_interna": ""
+    },
+    {
+      "id": 4,
+      "nome": "Henrique Vasconcelos",
+      "email": "henrique4@example.com",
+      "cidade": "Aparecida",
+      "nivel": "ouro",
+      "observacao_interna": ""
+    },
+    {
+      "id": 5,
+      "nome": "Luísa Fontenele",
+      "email": "luisa5@example.com",
+      "cidade": "Trindade",
+      "nivel": "prata",
+      "observacao_interna": "cliente desde a fundação"
+    },
+    {
+      "id": 6,
+      "nome": "Otávio Medeiros",
+      "email": "otavio6@example.com",
+      "cidade": "Goiânia",
+      "nivel": "bronze",
+      "observacao_interna": ""
+    },
+    {
+      "id": 7,
+      "nome": "Camila Rezende",
+      "email": "camila7@example.com",
+      "cidade": "Inhumas",
+      "nivel": "prata",
+      "observacao_interna": "reclamou da entrega"
+    },
+    {
+      "id": 8,
+      "nome": "Gustavo Peixoto",
+      "email": "gustavo8@example.com",
+      "cidade": "Goiânia",
+      "nivel": "ouro",
+      "observacao_interna": ""
+    }
+  ],
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Caneca de cerâmica",
+      "preco": 24.9,
+      "estoque": 120,
+      "custo": 11.0
+    },
+    {
+      "id": 2,
+      "nome": "Camiseta algodão",
+      "preco": 59.9,
+      "estoque": 60,
+      "custo": 22.5
+    },
+    {
+      "id": 3,
+      "nome": "Mochila urbana",
+      "preco": 189.0,
+      "estoque": 15,
+      "custo": 98.0
+    },
+    {
+      "id": 4,
+      "nome": "Garrafa térmica",
+      "preco": 79.9,
+      "estoque": 40,
+      "custo": 31.0
+    },
+    {
+      "id": 5,
+      "nome": "Caderno pautado",
+      "preco": 18.5,
+      "estoque": 300,
+      "custo": 6.2
+    },
+    {
+      "id": 6,
+      "nome": "Fone de ouvido",
+      "preco": 129.0,
+      "estoque": 25,
+      "custo": 55.0
+    }
+  ],
+  "pedidos": [
+    {
+      "id": 1001,
+      "cliente_id": 4,
+      "produto_id": 6,
+      "quantidade": 2,
+      "total": 258.0,
+      "status": "pago",
+      "criado_em": "2026-02-11"
+    },
+    {
+      "id": 1002,
+      "cliente_id": 7,
+      "produto_id": 5,
+      "quantidade": 3,
+      "total": 55.5,
+      "status": "enviado",
+      "criado_em": "2026-03-12"
+    },
+    {
+      "id": 1003,
+      "cliente_id": 2,
+      "produto_id": 4,
+      "quantidade": 1,
+      "total": 79.9,
+      "status": "entregue",
+      "criado_em": "2026-04-13"
+    },
+    {
+      "id": 1004,
+      "cliente_id": 5,
+      "produto_id": 3,
+      "quantidade": 2,
+      "total": 378.0,
+      "status": "cancelado",
+      "criado_em": "2026-05-14"
+    },
+    {
+      "id": 1005,
+      "cliente_id": 8,
+      "produto_id": 2,
+      "quantidade": 3,
+      "total": 179.7,
+      "status": "novo",
+      "criado_em": "2026-06-15"
+    },
+    {
+      "id": 1006,
+      "cliente_id": 3,
+      "produto_id": 1,
+      "quantidade": 1,
+      "total": 24.9,
+      "status": "pago",
+      "criado_em": "2026-07-16"
+    },
+    {
+      "id": 1007,
+      "cliente_id": 6,
+      "produto_id": 6,
+      "quantidade": 2,
+      "total": 258.0,
+      "status": "enviado",
+      "criado_em": "2026-08-17"
+    },
+    {
+      "id": 1008,
+      "cliente_id": 1,
+      "produto_id": 5,
+      "quantidade": 3,
+      "total": 55.5,
+      "status": "entregue",
+      "criado_em": "2026-09-18"
+    },
+    {
+      "id": 1009,
+      "cliente_id": 4,
+      "produto_id": 4,
+      "quantidade": 1,
+      "total": 79.9,
+      "status": "cancelado",
+      "criado_em": "2026-01-19"
+    },
+    {
+      "id": 1010,
+      "cliente_id": 7,
+      "produto_id": 3,
+      "quantidade": 2,
+      "total": 378.0,
+      "status": "novo",
+      "criado_em": "2026-02-20"
+    },
+    {
+      "id": 1011,
+      "cliente_id": 2,
+      "produto_id": 2,
+      "quantidade": 3,
+      "total": 179.7,
+      "status": "pago",
+      "criado_em": "2026-03-21"
+    },
+    {
+      "id": 1012,
+      "cliente_id": 5,
+      "produto_id": 1,
+      "quantidade": 1,
+      "total": 24.9,
+      "status": "enviado",
+      "criado_em": "2026-04-22"
+    },
+    {
+      "id": 1013,
+      "cliente_id": 8,
+      "produto_id": 6,
+      "quantidade": 2,
+      "total": 258.0,
+      "status": "entregue",
+      "criado_em": "2026-05-23"
+    },
+    {
+      "id": 1014,
+      "cliente_id": 3,
+      "produto_id": 5,
+      "quantidade": 3,
+      "total": 55.5,
+      "status": "cancelado",
+      "criado_em": "2026-06-24"
+    },
+    {
+      "id": 1015,
+      "cliente_id": 6,
+      "produto_id": 4,
+      "quantidade": 1,
+      "total": 79.9,
+      "status": "novo",
+      "criado_em": "2026-07-25"
+    },
+    {
+      "id": 1016,
+      "cliente_id": 1,
+      "produto_id": 3,
+      "quantidade": 2,
+      "total": 378.0,
+      "status": "pago",
+      "criado_em": "2026-08-26"
+    },
+    {
+      "id": 1017,
+      "cliente_id": 4,
+      "produto_id": 2,
+      "quantidade": 3,
+      "total": 179.7,
+      "status": "enviado",
+      "criado_em": "2026-09-27"
+    },
+    {
+      "id": 1018,
+      "cliente_id": 7,
+      "produto_id": 1,
+      "quantidade": 1,
+      "total": 24.9,
+      "status": "entregue",
+      "criado_em": "2026-01-10"
+    },
+    {
+      "id": 1019,
+      "cliente_id": 2,
+      "produto_id": 6,
+      "quantidade": 2,
+      "total": 258.0,
+      "status": "cancelado",
+      "criado_em": "2026-02-11"
+    },
+    {
+      "id": 1020,
+      "cliente_id": 5,
+      "produto_id": 5,
+      "quantidade": 3,
+      "total": 55.5,
+      "status": "novo",
+      "criado_em": "2026-03-12"
+    },
+    {
+      "id": 1021,
+      "cliente_id": 8,
+      "produto_id": 4,
+      "quantidade": 1,
+      "total": 79.9,
+      "status": "pago",
+      "criado_em": "2026-04-13"
+    },
+    {
+      "id": 1022,
+      "cliente_id": 3,
+      "produto_id": 3,
+      "quantidade": 2,
+      "total": 378.0,
+      "status": "enviado",
+      "criado_em": "2026-05-14"
+    },
+    {
+      "id": 1023,
+      "cliente_id": 6,
+      "produto_id": 2,
+      "quantidade": 3,
+      "total": 179.7,
+      "status": "entregue",
+      "criado_em": "2026-06-15"
+    },
+    {
+      "id": 1024,
+      "cliente_id": 1,
+      "produto_id": 1,
+      "quantidade": 1,
+      "total": 24.9,
+      "status": "cancelado",
+      "criado_em": "2026-07-16"
+    }
+  ]
+}

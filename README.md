@@ -4,10 +4,10 @@
 
 <p align="center">
   <a href="https://github.com/Dimasaas/gatehouse/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/Dimasaas/gatehouse/actions/workflows/ci.yml/badge.svg"></a>
-  <img alt="Node 20+" src="https://img.shields.io/badge/node-20%2B-00E5FF?labelColor=2a1052">
-  <img alt="MCP" src="https://img.shields.io/badge/protocolo-MCP-B388FF?labelColor=2a1052">
-  <img alt="Testes" src="https://img.shields.io/badge/testes-node%3Atest-1b3a8a">
-  <img alt="Licença PolyForm Noncommercial" src="https://img.shields.io/badge/licença-PolyForm%20Noncommercial-7C4DFF">
+  <img alt="Node 20+" src="https://img.shields.io/badge/node-20%2B-4D8BFF?labelColor=120726">
+  <img alt="MCP" src="https://img.shields.io/badge/protocolo-MCP-7C5CFF?labelColor=120726">
+  <img alt="Testes" src="https://img.shields.io/badge/testes-node%3Atest-4D8BFF?labelColor=120726">
+  <img alt="Licença PolyForm Noncommercial" src="https://img.shields.io/badge/licença-PolyForm%20Noncommercial-FF4FA3?labelColor=120726">
 </p>
 
 # Gatehouse

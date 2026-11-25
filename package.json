@@ -24,7 +24,7 @@
     "auditoria"
   ],
   "author": "João Victor Diamantino Cardoso",
-  "license": "MIT",
+  "license": "PolyForm-Noncommercial-1.0.0",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0",
     "zod": "^4.6.7"

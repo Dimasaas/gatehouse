@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 320" width="1280" height="320" role="img" aria-labelledby="t d">
-  <title id="t">Guarita</title>
+  <title id="t">Gatehouse</title>
   <desc id="d">Gateway MCP: o agente fala com o gateway, que aplica o escopo antes de tocar no banco.</desc>
   <defs>
     <linearGradient id="fundo" x1="0" y1="0" x2="1" y2="1">
@@ -29,7 +29,7 @@
   <rect width="1280" height="320" fill="url(#grade)"/>
   <rect x="0" y="316" width="1280" height="4" fill="url(#brilho)"/>
 
-  <text x="64" y="132" font-size="64" font-weight="700" fill="#ffffff"><tspan fill="#00E5FF">guarita</tspan><tspan class="cursor" fill="#B388FF">_</tspan></text>
+  <text x="64" y="132" font-size="64" font-weight="700" fill="#ffffff"><tspan fill="#00E5FF">gatehouse</tspan><tspan class="cursor" fill="#B388FF">_</tspan></text>
   <text x="66" y="180" font-size="20" fill="#dfe6ff">gateway MCP de leitura com escopo por pessoa</text>
   <text x="66" y="218" font-size="16" fill="#B388FF">escrita em 2 etapas  ·  tudo auditado</text>
   <text x="66" y="262" font-size="14" fill="#9fb2ec">node · @modelcontextprotocol/sdk · zod · node:test</text>

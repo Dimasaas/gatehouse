@@ -1,18 +1,18 @@
 {
   "mcpServers": {
-    "guarita-ana-atendimento": {
+    "gatehouse-ana-atendimento": {
       "command": "node",
-      "args": ["/caminho/para/guarita/src/index.js"],
+      "args": ["/caminho/para/gatehouse/src/index.js"],
       "env": {
         "MCP_PESSOA": "ana_atendimento",
-        "MCP_ESCOPOS": "/caminho/para/guarita/exemplos/escopos.json",
-        "MCP_DADOS": "/caminho/para/guarita/exemplos/dados.json",
-        "MCP_AUDITORIA": "/caminho/para/guarita/auditoria.jsonl"
+        "MCP_ESCOPOS": "/caminho/para/gatehouse/exemplos/escopos.json",
+        "MCP_DADOS": "/caminho/para/gatehouse/exemplos/dados.json",
+        "MCP_AUDITORIA": "/caminho/para/gatehouse/auditoria.jsonl"
       }
     },
-    "guarita-bruno-analise": {
+    "gatehouse-bruno-analise": {
       "command": "node",
-      "args": ["/caminho/para/guarita/src/index.js"],
+      "args": ["/caminho/para/gatehouse/src/index.js"],
       "env": {
         "MCP_PESSOA": "bruno_analise"
       }

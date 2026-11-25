@@ -16,7 +16,7 @@ const erro = (e) => ({
  * para que até uma entrada malformada deixe rastro na auditoria.
  */
 export function criarServidor({ gateway, pessoa }) {
-  const servidor = new McpServer({ name: 'guarita', version: '0.1.0' });
+  const servidor = new McpServer({ name: 'gatehouse', version: '0.1.0' });
   const rodar = (fn) => async (entrada) => {
     try {
       return texto(fn(entrada));

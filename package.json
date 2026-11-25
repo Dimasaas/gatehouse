@@ -1,11 +1,11 @@
 {
-  "name": "guarita",
+  "name": "gatehouse",
   "version": "0.1.0",
-  "description": "Guarita: gateway MCP de leitura com permissão por pessoa: escopos de tabelas e campos, consulta por DSL (sem SQL livre), escrita em duas etapas e auditoria em JSONL.",
+  "description": "Gatehouse: gateway MCP de leitura com permissão por pessoa: escopos de tabelas e campos, consulta por DSL (sem SQL livre), escrita em duas etapas e auditoria em JSONL.",
   "type": "module",
   "main": "src/index.js",
   "bin": {
-    "guarita": "src/index.js"
+    "gatehouse": "src/index.js"
   },
   "scripts": {
     "start": "node src/index.js",

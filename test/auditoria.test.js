@@ -7,7 +7,7 @@ import { Auditoria } from '../src/auditoria.js';
 import { novoGateway } from './ajuda.js';
 
 test('auditoria: uma linha JSONL por chamada, com quem, o quê, quando e o resultado', () => {
-  const dir = mkdtempSync(join(tmpdir(), 'guarita-'));
+  const dir = mkdtempSync(join(tmpdir(), 'gatehouse-'));
   try {
     const caminho = join(dir, 'sub', 'auditoria.jsonl');
     const auditoria = new Auditoria({ caminho, agora: () => new Date('2026-03-01T12:00:00Z') });
